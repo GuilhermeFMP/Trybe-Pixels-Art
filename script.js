@@ -19,6 +19,23 @@ function colorRandom() {
 
 const botao = document.getElementById('button-random-color');
 botao.addEventListener('click', colorRandom);
+// Mudar classe selected;
+function chanceClass(evento) {
+  const elemento = document.querySelector('.selected');
+  elemento.classList.remove('selected');
+  evento.target.classList.add('selected');
+}
+
+const primeiraCor = document.getElementsByClassName('color')[0];
+const segundaCor = document.getElementsByClassName('color')[1];
+const terceiraCor = document.getElementsByClassName('color')[2];
+const quartaCor = document.getElementsByClassName('color')[3];
+
+primeiraCor.addEventListener('click', chanceClass);
+segundaCor.addEventListener('click', chanceClass);
+terceiraCor.addEventListener('click', chanceClass);
+quartaCor.addEventListener('click', chanceClass);
+
 // Retornar as cores;
 const colorPallete = localStorage.getItem('colorPalette');
 if (colorPallete !== null) {
