@@ -22,3 +22,13 @@
 .color:nth-child( 4 ) {
   background-color: green;
 }
+
+.pixel {
+  display: inline-block;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
