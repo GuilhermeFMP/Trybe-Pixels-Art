@@ -55,7 +55,6 @@ const quadrados = document.getElementsByClassName('pixel');
 for (let index = 0; index < quadrados.length; index += 1) {
   quadrados[index].addEventListener('click', pintarQuadrado);
 }
-
 // Retornar as cores;
 const colorPallete = localStorage.getItem('colorPalette');
 if (colorPallete !== null) {
