@@ -19,6 +19,16 @@ function colorRandom() {
 
 const botao = document.getElementById('button-random-color');
 botao.addEventListener('click', colorRandom);
+// Botão Limpar
+function limpaQuadrado() {
+  const quadrados = document.getElementsByClassName('pixel');
+  for (let index = 0; index < quadrados.length; index += 1) {
+    quadrados[index].style.backgroundColor = 'rgb(255, 255, 255)';
+  }
+}
+
+const limpando = document.getElementById('clear-board');
+limpando.addEventListener('click', limpaQuadrado);
 // Mudar classe selected;
 function chanceClass(evento) {
   const elemento = document.querySelector('.selected');
