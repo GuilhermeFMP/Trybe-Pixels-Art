@@ -36,6 +36,16 @@ segundaCor.addEventListener('click', chanceClass);
 terceiraCor.addEventListener('click', chanceClass);
 quartaCor.addEventListener('click', chanceClass);
 
+// Pintar quadrado
+function pintarQuadrado(event) {
+  const elemento = document.querySelector('.selected');
+  event.target.style.backgroundColor = elemento.style.backgroundColor;
+}
+const quadrados = document.getElementsByClassName('pixel');
+for (let index = 0; index < quadrados.length; index += 1) {
+  quadrados[index].addEventListener('click', pintarQuadrado);
+}
+
 // Retornar as cores;
 const colorPallete = localStorage.getItem('colorPalette');
 if (colorPallete !== null) {
