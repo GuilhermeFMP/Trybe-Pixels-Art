@@ -29,6 +29,15 @@ function limpaQuadrado() {
 
 const limpando = document.getElementById('clear-board');
 limpando.addEventListener('click', limpaQuadrado);
+// Guardar e Retornar as cores salvas
+let pixelGuardados = [];
+function attPixelStorage() {
+  pixelGuardados = [];
+  for (let index = 0; index < 25; index += 1) {
+    pixelGuardados.push(document.getElementsByClassName('pixel')[index].style.backgroundColor);
+  }
+  localStorage.setItem('pixelBoard', JSON.stringify(pixelGuardados));
+}
 // Mudar classe selected;
 function chanceClass(evento) {
   const elemento = document.querySelector('.selected');
@@ -62,6 +71,20 @@ if (colorPallete !== null) {
   if (coresSalva.length <= 3) {
     for (let index = 0; index < 3; index += 1) {
       document.getElementsByClassName('color')[index + 1].style.backgroundColor = coresSalva[index];
+    }
+  }
+}
+// Retornar os pixels;
+const attpixel = document.getElementsByClassName('pixel');
+for (let index = 0; index < attpixel.length; index += 1) {
+  attpixel[index].addEventListener('click', attPixelStorage);
+}
+const pixelPallete = localStorage.getItem('pixelBoard');
+if (pixelPallete !== null) {
+  const pixelSalva = JSON.parse(pixelPallete);
+  if (pixelSalva.length <= 25) {
+    for (let index = 0; index < 25; index += 1) {
+      document.getElementsByClassName('pixel')[index].style.backgroundColor = pixelSalva[index];
     }
   }
 }
